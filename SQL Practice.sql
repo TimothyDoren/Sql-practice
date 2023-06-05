@@ -208,8 +208,6 @@ Each row in this table indicates that the teacher with teacher_id teaches the su
 Write an SQL query to report the number of unique subjects each teacher teaches in the university.
 
 Return the result table in any order.
-
-The query result format is shown in the following example.
 */
 
 SELECT
@@ -218,3 +216,32 @@ FROM
     Teacher
 GROUP BY 
     teacher_id
+
+/*
+Table: Employees
+
++-------------+----------+
+| Column Name | Type     |
++-------------+----------+
+| employee_id | int      |
+| name        | varchar  |
+| manager_id  | int      |
+| salary      | int      |
++-------------+----------+
+employee_id is the primary key for this table.
+This table contains information about the employees, their salary, and the ID of their manager. Some employees do not have a manager (manager_id is null). 
+ 
+
+Write an SQL query to report the IDs of the employees whose salary is strictly less than $30000 and whose manager left the company. When a manager leaves the company, their information is deleted from the Employees table, but the reports still have their manager_id set to the manager that left.
+
+Return the result table ordered by employee_id.
+*/
+SELECT 
+    e.employee_id
+FROM 
+    Employees e
+LEFT JOIN Employees m ON e.manager_id = m.employee_id
+WHERE 
+    e.salary < 30000
+    AND m.employee_id IS NULL 
+Order By e.employee_id
