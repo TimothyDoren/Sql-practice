@@ -237,11 +237,11 @@ Write an SQL query to report the IDs of the employees whose salary is strictly l
 Return the result table ordered by employee_id.
 */
 SELECT 
-    e.employee_id
+    employee_id
 FROM 
-    Employees e
-LEFT JOIN Employees m ON e.manager_id = m.employee_id
+    Employees 
 WHERE 
-    e.salary < 30000
-    AND m.employee_id IS NULL 
-Order By e.employee_id
+    salary < 30000
+    AND manager_id NOT IN (select employee_id from Employees)
+Order By employee_id
+
