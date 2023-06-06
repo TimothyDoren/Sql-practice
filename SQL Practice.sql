@@ -245,3 +245,40 @@ WHERE
     AND manager_id NOT IN (select employee_id from Employees)
 Order By employee_id
 
+/*
+Table: Tweets
+
++----------------+---------+
+| Column Name    | Type    |
++----------------+---------+
+| tweet_id       | int     |
+| content        | varchar |
++----------------+---------+
+tweet_id is the primary key for this table.
+This table contains all the tweets in a social media app.
+ 
+
+Write an SQL query to find the IDs of the invalid tweets. The tweet is invalid if the number of characters used in the content of the tweet is strictly greater than 15.
+
+Return the result table in any order.
+*/
+
+SELECT
+    tweet_id
+FROM 
+    Tweets
+WHERE
+    LENGTH(content) > 15
+
+
+/*
+Still working on this problem below. It's finding the average time it takes for a machine's processes
+This solution is wrong below. I need to keep working on it. 
+*/
+SELECT 
+    machine_id, 
+    ROUND((SUM(timestamp_start, (-1*timestamp_end))/(MAX(process_id) + 1)), 3) AS processing_time
+FROM
+    Activity
+GROUP BY
+    machine_id;
