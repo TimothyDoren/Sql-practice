@@ -345,3 +345,24 @@ Query all columns (attributes) for every row in the CITY table.
 
 SELECT *
 FROM City;
+
+/*
+Find the difference between the total number
+of CITY entries in the table and the number of distinct CITY entries in the table.
+*/
+
+SELECT ((COUNT(City)) - (COUNT(DISTINCT(City))))
+From Station;
+
+/*
+Query the list of CITY names starting with vowels 
+(i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+*/
+SELECT DISTINCT City
+FROM Station 
+Where City LIKE '[AEIOU]%';
+
+-- Same question as above now but flipped (ENDING with vowel)
+SELECT DISTINCT City
+FROM Station 
+Where City LIKE '%[AEIOU]';
