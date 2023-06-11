@@ -338,3 +338,10 @@ SELECT Name
 FROM City 
 WHERE Population > 120000
     AND Countrycode = 'USA';
+
+/*
+Query all columns (attributes) for every row in the CITY table.
+*/
+
+SELECT *
+FROM City;
