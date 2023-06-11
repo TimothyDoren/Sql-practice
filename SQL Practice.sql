@@ -312,3 +312,29 @@ ORDER BY name_length, CITY;
 SELECT TOP 1 CITY, LEN(CITY) AS name_length
 FROM STATION
 ORDER BY name_length DESC, CITY;
+
+/*
+Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA.
+
+The CITY table is described as follows:
+id number
+name varchar(17)
+CountryCode Varchar(3)
+District VARCHAR(20)
+Population Number
+*/
+
+SELECT *
+FROM City
+WHERE Population > 100000 
+    AND Countrycode = 'USA';
+
+/*
+Query the NAME field for all American cities in the CITY table with populations larger than 120000. 
+The CountryCode for America is USA.
+*/
+
+SELECT Name
+FROM City 
+WHERE Population > 120000
+    AND Countrycode = 'USA';
