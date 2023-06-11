@@ -372,3 +372,15 @@ SELECT DISTINCT City
 FROM Station 
 Where City LIKE '%[AEIOU]'
     AND City Like '[AEIOU]%';
+
+--Query the list of CITY names from STATION that do not start with vowels. 
+--Your result cannot contain duplicates.
+
+SELECT DISTINCT City
+From Station 
+WHERE City NOT LIKE '[AIEOU]%';
+
+/*
+Query the list of CITY names from STATION that do not end with vowels. 
+Your result cannot contain duplicates.
+*/
