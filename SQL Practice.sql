@@ -366,3 +366,9 @@ Where City LIKE '[AEIOU]%';
 SELECT DISTINCT City
 FROM Station 
 Where City LIKE '%[AEIOU]';
+
+--Now the same question but it starts AND ends with a vowel
+SELECT DISTINCT City
+FROM Station 
+Where City LIKE '%[AEIOU]'
+    AND City Like '[AEIOU]%';
