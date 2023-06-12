@@ -397,4 +397,4 @@ Query the list of CITY names from STATION that either
 
 SELECT DISTINCT City
 FROM Station
-WHERE City LIKE '%[AEIOU]' AND City LIKE '[AEIOU]%';
+WHERE City LIKE '%[AEIOU]' OR City LIKE '[AEIOU]%';
