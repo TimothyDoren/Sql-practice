@@ -437,3 +437,8 @@ ORDER BY employee_id ASC;
 Query the average population for all cities in CITY, rounded down to the nearest integer.
 */
 
+SELECT FLOOR(AVG(Population)) AS AveragePopulation
+FROM City;
+
+/*
+*/
