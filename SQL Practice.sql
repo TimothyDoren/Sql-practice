@@ -441,4 +441,12 @@ SELECT FLOOR(AVG(Population)) AS AveragePopulation
 FROM City;
 
 /*
+Query the sum of the populations for all Japanese cities in CITY. The COUNTRYCODE for Japan is JPN.
+*/
+
+SELECT SUM(Population)
+FROM City
+Where Countrycode = 'JPN';
+
+/*
 */
