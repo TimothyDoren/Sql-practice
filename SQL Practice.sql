@@ -449,4 +449,8 @@ FROM City
 Where Countrycode = 'JPN';
 
 /*
+Query the difference between the maximum and minimum populations in CITY.
 */
+
+SELECT (MAX(Population) - MIN(Population)) AS Difference
+FROM City;
